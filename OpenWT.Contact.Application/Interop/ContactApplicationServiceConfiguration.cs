@@ -11,6 +11,7 @@ namespace OpenWT.Contact.Application.Interop
     {
         public static void AddContactApplicationServices(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddScoped<IContactSkillService, ContactSkillService>();
             services.AddScoped<IContactService, ContactService>();
             services.AddScoped<ISkillService, SkillService>();
 
