@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OpenWT.Contact.Service\OpenWT.Contact.Service.csproj" />
+    <ProjectReference Include="..\OpenWT.Contact.Application\OpenWT.Contact.Application.csproj" />
   </ItemGroup>
 
 

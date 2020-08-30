@@ -13,9 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Infrastructure", "03 -
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Data", "04 - Data", "{987399E2-4068-479C-9F36-E471DF34C5C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWT.Contact.Service", "OpenWT.Contact.Service\OpenWT.Contact.Service.csproj", "{1868A598-4B37-47E7-A0D6-87857EFB6096}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWT.Contact.Application", "OpenWT.Contact.Application\OpenWT.Contact.Application.csproj", "{1868A598-4B37-47E7-A0D6-87857EFB6096}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWT.Contact.Service.Contract", "OpenWT.Contact.Service.Contract\OpenWT.Contact.Service.Contract.csproj", "{E57B3012-6DCB-4924-9821-64F2E97C4C92}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWT.Contact.Application.Contract", "OpenWT.Contact.Application.Contract\OpenWT.Contact.Application.Contract.csproj", "{E57B3012-6DCB-4924-9821-64F2E97C4C92}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWT.Contact.Infrastructure", "OpenWT.Contact.Infrastructure\OpenWT.Contact.Infrastructure.csproj", "{3F9592CF-907C-49F6-AF11-0514B9FA3978}"
 EndProject

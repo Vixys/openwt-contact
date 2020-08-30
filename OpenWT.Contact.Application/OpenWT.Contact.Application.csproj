@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>OpenWT.Contact.Application</AssemblyName>
+    <RootNamespace>OpenWT.Contact.Application</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
