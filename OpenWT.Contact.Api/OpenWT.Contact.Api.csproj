@@ -8,5 +8,10 @@
     <ProjectReference Include="..\OpenWT.Contact.Application\OpenWT.Contact.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="5.5.1" />
+  </ItemGroup>
+
 
 </Project>
