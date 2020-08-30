@@ -37,6 +37,11 @@ namespace OpenWT.Contact.Infrastructure.Repository
         {
             return GetOne(entity => entity.Id.Equals(entityId), includeProperties);
         }
+        
+        public IEnumerable<TEntity> GetByIds(IEnumerable<TId> entityIds, Func<IQueryable<TEntity>, IQueryable<TEntity>> includeProperties = null)
+        {
+            return Get(entity => entityIds.Contains(entity.Id), includeProperties: includeProperties);
+        }
 
         public virtual IEnumerable<TEntity> GetAll(Func<IQueryable<TEntity>, IQueryable<TEntity>> includeProperties = null)
         {
