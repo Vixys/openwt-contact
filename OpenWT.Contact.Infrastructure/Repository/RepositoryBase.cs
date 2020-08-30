@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using OpenWT.Contact.Data.Contract;
 using OpenWT.Contact.Infrastructure.Contract;
@@ -58,23 +56,6 @@ namespace OpenWT.Contact.Infrastructure.Repository
             SaveChanges();
 
             return result;
-        }
-
-        /// <summary>
-        /// Insert a new entity if it does not exist, otherwise update it.
-        /// To determine if the entity exists it tries to find the entity base on the entity primary key.
-        /// </summary>
-        /// <param name="entity">The entity to insert or update</param>
-        /// <returns>The entity newly inserted or updated</returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public virtual TEntity InsertOrUpdate(TEntity entity)
-        {
-            var entityModel = DbSet.Find(GetPrimaryKeyValue(entity));
-
-            if (entityModel != null)
-                return Update(entity);
-
-            return Insert(entity);
         }
 
         /// <summary>
@@ -183,14 +164,6 @@ namespace OpenWT.Contact.Infrastructure.Repository
             {
                 ThrowEnhancedValidationException(e);
             }
-        }
-
-        private object[] GetPrimaryKeyValue(TEntity entity)
-        {
-            var keyProperties = typeof(TEntity).GetProperties().Where(p => p.IsDefined(typeof(KeyAttribute), false))
-                .ToList();
-
-            return keyProperties.Select(info => info.GetValue(entity)).ToArray();
         }
 
         #endregion

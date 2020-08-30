@@ -10,8 +10,6 @@ namespace OpenWT.Contact.Infrastructure.Contract
 
         TEntity Insert(TEntity entity);
 
-        TEntity InsertOrUpdate(TEntity entity);
-
         IEnumerable<TEntity> Insert(IEnumerable<TEntity> entities);
 
         void Delete(params object[] primaryKeys);
