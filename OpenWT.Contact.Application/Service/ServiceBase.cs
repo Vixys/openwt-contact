@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using AutoMapper;
 using OpenWT.Contact.Application.Contract;
 using OpenWT.Contact.Application.Data;
+using OpenWT.Contact.Common.Exception;
 using OpenWT.Contact.Data.Contract;
 using OpenWT.Contact.Infrastructure.Contract;
 
@@ -27,7 +28,7 @@ namespace OpenWT.Contact.Application.Service
             return _mapper.Map<IEnumerable<TDto>>(_repository.GetAll());
         }
 
-        public TDto Create(TDto contactCreation)
+        public virtual TDto Create(TDto contactCreation)
         {
             contactCreation.Id = Guid.NewGuid();
 
@@ -36,36 +37,36 @@ namespace OpenWT.Contact.Application.Service
             return _mapper.Map<TDto>(_repository.Insert(contactEntity));
         }
 
-        public TDto GetById(Guid contactId)
+        public TDto GetById(Guid entityId)
         {
-            var entity = _repository.GetById(contactId);
+            var entity = _repository.GetById(entityId);
             
             if (entity == null)
             {
-                // TODO: throw exception
+                throw new NotFoundException($"The {typeof(TDto).Name.Replace("Dto", "")} with id {entityId} does not exist.");
             }
             
             return _mapper.Map<TDto>(entity);
         }
 
-        public void DeleteById(Guid contactId)
+        public void DeleteById(Guid entityId)
         {
-            if (_repository.GetById(contactId) == null)
+            if (_repository.GetById(entityId) == null)
             {
-                // TODO: throw exception
+                throw new NotFoundException($"The {typeof(TDto).Name.Replace("Dto", "")} with id {entityId} does not exist.");
             }
             
-            _repository.Delete(contactId);
+            _repository.Delete(entityId);
         }
 
-        public TDto Update(Guid contactId, TDto contact)
+        public TDto Update(Guid entityId, TDto contact)
         {
-            if (_repository.GetById(contactId) == null)
+            if (_repository.GetById(entityId) == null)
             {
-                // TODO: throw exception
+                throw new NotFoundException($"The {typeof(TDto).Name.Replace("Dto", "")} with id {entityId} does not exist.");
             }
             
-            contact.Id = contactId;
+            contact.Id = entityId;
             
             var contactEntity = _mapper.Map<TEntity>(contact);
 

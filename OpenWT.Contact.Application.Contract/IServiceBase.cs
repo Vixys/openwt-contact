@@ -10,7 +10,7 @@ namespace OpenWT.Contact.Application.Contract
         IEnumerable<TDto> GetAll();
         TDto Create(TDto contactCreation);
         TDto GetById(TId contactId);
-        void DeleteById(TId contactId);
+        void DeleteById(TId entityId);
         TDto Update(TId contactId, TDto contact);
     }
 }

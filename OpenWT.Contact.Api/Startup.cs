@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using OpenWT.Contact.Api.Middleware;
 using OpenWT.Contact.Application.Interop;
 using Swashbuckle.AspNetCore.Swagger;
 
@@ -27,6 +28,8 @@ namespace OpenWT.Contact.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<ApiExceptionHandlerMiddleware>();
+            
             services.AddControllers();
             
             services.AddContactApplicationServices(Configuration);
@@ -57,6 +60,8 @@ namespace OpenWT.Contact.Api
 
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseMiddleware<ApiExceptionHandlerMiddleware>();
 
             app.UseHttpsRedirection();
 

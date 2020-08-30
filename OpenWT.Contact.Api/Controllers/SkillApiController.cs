@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using OpenWT.Contact.Api.Middleware;
 using OpenWT.Contact.Application.Contract;
 using OpenWT.Contact.Application.Data;
 using Swashbuckle.AspNetCore.Annotations;
@@ -30,7 +31,7 @@ namespace OpenWT.Contact.Api.Controllers
 
         [HttpGet("{id}")]
         [SwaggerResponse(200, "The skill was successfully retrieve", typeof(SkillDto))]
-        [SwaggerResponse(404, "The skill to retrieve was not found")]
+        [SwaggerResponse(404, "The skill to retrieve was not found", typeof(ApiExceptionModel))]
         [SwaggerOperation(Summary = "Retrieve a skill", OperationId = "GetSkill")]
         public ActionResult<SkillDto> Get([FromRoute] Guid id)
         {
@@ -39,7 +40,7 @@ namespace OpenWT.Contact.Api.Controllers
 
         [HttpPost]
         [SwaggerResponse(201, "The skill was created", typeof(SkillDto))]
-        [SwaggerResponse(400, "The skill data is invalid")]
+        [SwaggerResponse(400, "The skill data is invalid", typeof(ApiExceptionModel))]
         [SwaggerOperation(Summary = "Create a new skill", OperationId = "CreateSkill")]
         public ActionResult<SkillDto> Create([FromBody] SkillDto createBody)
         {
@@ -48,7 +49,7 @@ namespace OpenWT.Contact.Api.Controllers
 
         [HttpDelete("{id}")]
         [SwaggerResponse(200, "The skill was deleted")]
-        [SwaggerResponse(404, "The skill to delete was not found")]
+        [SwaggerResponse(404, "The skill to delete was not found", typeof(ApiExceptionModel))]
         [SwaggerOperation(Summary = "Delete a skill", OperationId = "DeleteSkill")]
         public IActionResult Delete([FromRoute] Guid id)
         {
@@ -58,7 +59,7 @@ namespace OpenWT.Contact.Api.Controllers
 
         [HttpPut("{id}")]
         [SwaggerResponse(200, "The skill was successfully updated", typeof(SkillDto))]
-        [SwaggerResponse(404, "The skill to update was not found")]
+        [SwaggerResponse(404, "The skill to update was not found", typeof(ApiExceptionModel))]
         [SwaggerOperation(Summary = "Update a skill", OperationId = "UpdateSkill")]
         public ActionResult<SkillDto> Update([FromRoute] Guid id, [FromBody] SkillDto createBody)
         {

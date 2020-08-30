@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWT.Contact.Data.Contrac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWT.Contact.Application.Data", "OpenWT.Contact.Application.Data\OpenWT.Contact.Application.Data.csproj", "{65C56B20-5897-40DC-BEAE-DD1E895A985E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWT.Contact.Common", "OpenWT.Contact.Common\OpenWT.Contact.Common.csproj", "{D613724C-9E8D-4C90-9922-FFEC0E8BA374}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -146,5 +148,17 @@ Global
 		{65C56B20-5897-40DC-BEAE-DD1E895A985E}.Release|x64.Build.0 = Release|Any CPU
 		{65C56B20-5897-40DC-BEAE-DD1E895A985E}.Release|x86.ActiveCfg = Release|Any CPU
 		{65C56B20-5897-40DC-BEAE-DD1E895A985E}.Release|x86.Build.0 = Release|Any CPU
+		{D613724C-9E8D-4C90-9922-FFEC0E8BA374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D613724C-9E8D-4C90-9922-FFEC0E8BA374}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D613724C-9E8D-4C90-9922-FFEC0E8BA374}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D613724C-9E8D-4C90-9922-FFEC0E8BA374}.Debug|x64.Build.0 = Debug|Any CPU
+		{D613724C-9E8D-4C90-9922-FFEC0E8BA374}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D613724C-9E8D-4C90-9922-FFEC0E8BA374}.Debug|x86.Build.0 = Debug|Any CPU
+		{D613724C-9E8D-4C90-9922-FFEC0E8BA374}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D613724C-9E8D-4C90-9922-FFEC0E8BA374}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D613724C-9E8D-4C90-9922-FFEC0E8BA374}.Release|x64.ActiveCfg = Release|Any CPU
+		{D613724C-9E8D-4C90-9922-FFEC0E8BA374}.Release|x64.Build.0 = Release|Any CPU
+		{D613724C-9E8D-4C90-9922-FFEC0E8BA374}.Release|x86.ActiveCfg = Release|Any CPU
+		{D613724C-9E8D-4C90-9922-FFEC0E8BA374}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
