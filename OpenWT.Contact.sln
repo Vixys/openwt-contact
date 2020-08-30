@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWT.Contact.Data", "Open
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWT.Contact.Data.Contract", "OpenWT.Contact.Data.Contract\OpenWT.Contact.Data.Contract.csproj", "{F7F55694-96EC-47FE-827F-04AB1FBBAD3B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWT.Contact.Application.Data", "OpenWT.Contact.Application.Data\OpenWT.Contact.Application.Data.csproj", "{65C56B20-5897-40DC-BEAE-DD1E895A985E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,7 @@ Global
 		{A8F774F3-5E5D-4AD0-BE28-140FAFCD9B9F} = {61767985-778B-4628-A168-ED209228CDC7}
 		{AE6A0EE7-C14B-4AD5-9584-1A823F7F8664} = {987399E2-4068-479C-9F36-E471DF34C5C6}
 		{F7F55694-96EC-47FE-827F-04AB1FBBAD3B} = {987399E2-4068-479C-9F36-E471DF34C5C6}
+		{65C56B20-5897-40DC-BEAE-DD1E895A985E} = {912AEED1-54B8-47C9-ACBC-F03AA10FA66C}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{90BF7384-4C30-4D9D-B1BD-8A1B9A46E99E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -131,5 +134,17 @@ Global
 		{F7F55694-96EC-47FE-827F-04AB1FBBAD3B}.Release|x64.Build.0 = Release|Any CPU
 		{F7F55694-96EC-47FE-827F-04AB1FBBAD3B}.Release|x86.ActiveCfg = Release|Any CPU
 		{F7F55694-96EC-47FE-827F-04AB1FBBAD3B}.Release|x86.Build.0 = Release|Any CPU
+		{65C56B20-5897-40DC-BEAE-DD1E895A985E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65C56B20-5897-40DC-BEAE-DD1E895A985E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65C56B20-5897-40DC-BEAE-DD1E895A985E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{65C56B20-5897-40DC-BEAE-DD1E895A985E}.Debug|x64.Build.0 = Debug|Any CPU
+		{65C56B20-5897-40DC-BEAE-DD1E895A985E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{65C56B20-5897-40DC-BEAE-DD1E895A985E}.Debug|x86.Build.0 = Debug|Any CPU
+		{65C56B20-5897-40DC-BEAE-DD1E895A985E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65C56B20-5897-40DC-BEAE-DD1E895A985E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65C56B20-5897-40DC-BEAE-DD1E895A985E}.Release|x64.ActiveCfg = Release|Any CPU
+		{65C56B20-5897-40DC-BEAE-DD1E895A985E}.Release|x64.Build.0 = Release|Any CPU
+		{65C56B20-5897-40DC-BEAE-DD1E895A985E}.Release|x86.ActiveCfg = Release|Any CPU
+		{65C56B20-5897-40DC-BEAE-DD1E895A985E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

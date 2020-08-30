@@ -6,4 +6,8 @@
     <RootNamespace>OpenWT.Contact.Application.Contract</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OpenWT.Contact.Application.Data\OpenWT.Contact.Application.Data.csproj" />
+  </ItemGroup>
+
 </Project>

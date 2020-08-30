@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using AutoMapper;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OpenWT.Contact.Application.Contract;
 using OpenWT.Contact.Application.Service;
@@ -12,6 +13,8 @@ namespace OpenWT.Contact.Application.Interop
         {
             services.AddScoped<IContactService, ContactService>();
             services.AddScoped<ISkillService, SkillService>();
+
+            services.AddAutoMapper(typeof(ContactApplicationServiceConfiguration).Assembly);
             
             services.AddContactInfrastructureServices(configuration);
         }
