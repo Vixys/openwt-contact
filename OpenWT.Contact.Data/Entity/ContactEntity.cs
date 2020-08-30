@@ -27,7 +27,13 @@ namespace OpenWT.Contact.Data.Entity
         public string Email { get; set; }
 
         public string MobilePhoneNumber { get; set; }
+        
+        public Guid UserId { get; set; }
 
+        [ForeignKey("UserId")]
+        [Required]
+        public UserEntity User { get; set; }
+        
         public ICollection<ContactSkillEntity> ContactSkills { get; set; }
     }
 }

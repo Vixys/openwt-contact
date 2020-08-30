@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Internal;
 using OpenWT.Contact.Api.Middleware;
 using OpenWT.Contact.Application.Contract;
 using OpenWT.Contact.Application.Data;
-using OpenWT.Contact.Data.Entity;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace OpenWT.Contact.Api.Controllers
 {
+    [Authorize]
     [Route("api/contacts/{contactId}/skills")]
     [ApiController]
     [Produces("application/json")]

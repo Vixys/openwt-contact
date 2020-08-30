@@ -1,10 +1,13 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using OpenWT.Contact.Data.Entity;
 
 namespace OpenWT.Contact.Data.Context
 {
-    public class ContactContext : DbContext
+    public class ContactContext : IdentityDbContext<UserEntity, IdentityRole<Guid>, Guid>
     {
         public ContactContext(DbContextOptions<ContactContext> options) : base(options)
         {

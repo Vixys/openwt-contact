@@ -18,6 +18,7 @@ namespace OpenWT.Contact.Application.Data
         [Required]
         public string Address { get; set; }
 
+        [EmailAddress]
         public string Email { get; set; }
 
         public string MobilePhoneNumber { get; set; }

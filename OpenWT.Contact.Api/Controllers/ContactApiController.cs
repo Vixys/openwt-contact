@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Internal;
@@ -14,6 +15,7 @@ namespace OpenWT.Contact.Api.Controllers
 {
     [Route("api/contacts")]
     [ApiController]
+    [Authorize]
     [Produces("application/json")]
     public class ContactApiController : ControllerBase
     {
