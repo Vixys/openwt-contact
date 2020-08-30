@@ -8,5 +8,9 @@
     <Folder Include="Controllers" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OpenWT.Contact.Service\OpenWT.Contact.Service.csproj" />
+  </ItemGroup>
+
 
 </Project>
