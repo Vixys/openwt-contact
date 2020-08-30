@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using AutoMapper;
 using OpenWT.Contact.Application.Contract;
 using OpenWT.Contact.Application.Data;
@@ -20,7 +21,12 @@ namespace OpenWT.Contact.Application.Service
             _mapper = mapper;
             _repository = repository;
         }
-        
+
+        public IEnumerable<TDto> GetAll()
+        {
+            return _mapper.Map<IEnumerable<TDto>>(_repository.GetAll());
+        }
+
         public TDto Create(TDto contactCreation)
         {
             contactCreation.Id = Guid.NewGuid();

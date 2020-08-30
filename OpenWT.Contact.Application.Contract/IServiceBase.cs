@@ -1,4 +1,5 @@
-﻿using OpenWT.Contact.Application.Data;
+﻿using System.Collections.Generic;
+using OpenWT.Contact.Application.Data;
 
 namespace OpenWT.Contact.Application.Contract
 {
@@ -6,6 +7,7 @@ namespace OpenWT.Contact.Application.Contract
         where TDto : IDto<TId> 
         where TId : struct
     {
+        IEnumerable<TDto> GetAll();
         TDto Create(TDto contactCreation);
         TDto GetById(TId contactId);
         void DeleteById(TId contactId);

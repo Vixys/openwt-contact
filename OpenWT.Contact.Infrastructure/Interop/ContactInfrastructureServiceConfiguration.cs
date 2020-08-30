@@ -11,7 +11,7 @@ namespace OpenWT.Contact.Infrastructure.Interop
         public static void AddContactInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<IContactRepository, ContactRepository>();
-            services.AddScoped<ISkillRepository, ISkillRepository>();
+            services.AddScoped<ISkillRepository, SkillRepository>();
             
             services.AddContactDataServices(configuration);
         }
