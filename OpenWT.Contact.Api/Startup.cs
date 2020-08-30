@@ -27,6 +27,7 @@ namespace OpenWT.Contact.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            
             services.AddContactApplicationServices(Configuration);
         }
 

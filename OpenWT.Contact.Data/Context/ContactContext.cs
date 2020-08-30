@@ -6,6 +6,10 @@ namespace OpenWT.Contact.Data.Context
 {
     public class ContactContext : DbContext
     {
+        public ContactContext(DbContextOptions<ContactContext> options) : base(options)
+        {
+        }
+        
         #region Entities
 
         public DbSet<ContactEntity> Contacts { get; set; }
