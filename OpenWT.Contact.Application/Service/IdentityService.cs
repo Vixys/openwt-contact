@@ -59,6 +59,7 @@ namespace OpenWT.Contact.Application.Service
             var authClaims = new List<Claim>  
             {  
                 new Claim(ClaimTypes.Name, userEntity.UserName),  
+                new Claim(ClaimTypes.NameIdentifier, userEntity.Id.ToString()),  
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),  
             }; 
             

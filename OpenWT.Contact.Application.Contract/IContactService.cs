@@ -5,5 +5,6 @@ namespace OpenWT.Contact.Application.Contract
 {
     public interface IContactService : IServiceBase<ContactDto, Guid>
     {
+        bool CanActOnContact(Guid entityId);
     }
 }

@@ -17,7 +17,7 @@ namespace OpenWT.Contact.Api.Controllers
     [ApiController]
     [Authorize]
     [Produces("application/json")]
-    public class ContactApiController : ControllerBase
+    public class ContactApiController : ApiControllerBase
     {
         private readonly IContactService _contactService;
 
@@ -40,6 +40,7 @@ namespace OpenWT.Contact.Api.Controllers
         [SwaggerOperation(Summary = "Retrieve a contact", OperationId = "GetContact")]
         public ActionResult<ContactDto> Get([FromRoute] Guid id)
         {
+            CheckSecurity(_contactService.CanActOnContact, id);
             return _contactService.GetById(id);
         }
 
@@ -60,6 +61,7 @@ namespace OpenWT.Contact.Api.Controllers
         [SwaggerOperation(Summary = "Delete a contact", OperationId = "DeleteContact")]
         public IActionResult Delete([FromRoute] Guid id)
         {
+            CheckSecurity(_contactService.CanActOnContact, id);
             _contactService.DeleteById(id);
             return Ok();
         }
@@ -70,6 +72,7 @@ namespace OpenWT.Contact.Api.Controllers
         [SwaggerOperation(Summary = "Update a contact", OperationId = "UpdateContact")]
         public ActionResult<ContactDto> Update([FromRoute] Guid id, [FromBody, SwaggerRequestBody("The updated contact payload", Required = true)] ContactDto updateBody)
         {
+            CheckSecurity(_contactService.CanActOnContact, id);
             return _contactService.Update(id, updateBody);
         }
     }

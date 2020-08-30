@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -18,6 +19,8 @@ namespace OpenWT.Contact.Application.Interop
             services.AddScoped<IContactService, ContactService>();
             services.AddScoped<ISkillService, SkillService>();
             services.AddScoped<IIdentityService, IdentityService>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddAutoMapper(typeof(ContactApplicationServiceConfiguration).Assembly);
 

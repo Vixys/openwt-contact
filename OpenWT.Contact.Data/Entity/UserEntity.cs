@@ -9,9 +9,5 @@ namespace OpenWT.Contact.Data.Entity
     [Table("User")]
     public class UserEntity : IdentityUser<Guid>, IEntity<Guid>
     {
-        public Guid? ContactId { get; set; }
-
-        [ForeignKey("ContactId")]
-        public ContactEntity Contact { get; set; }
     }
 }
