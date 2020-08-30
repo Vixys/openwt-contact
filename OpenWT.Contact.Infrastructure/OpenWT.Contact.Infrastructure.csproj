@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OpenWT.Contact.Data\OpenWT.Contact.Data.csproj" />
+    <ProjectReference Include="..\OpenWT.Contact.Infrastructure.Contract\OpenWT.Contact.Infrastructure.Contract.csproj" />
   </ItemGroup>
 
 </Project>
