@@ -10,7 +10,7 @@ namespace OpenWT.Contact.Api.Controllers
         {
             if (!func(arg1))
             {
-                throw new UnauthorizedException("Unauthorized");
+                throw new ForbiddenException("Unauthorized");
             }
         }
     }

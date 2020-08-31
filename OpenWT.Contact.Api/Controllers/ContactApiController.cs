@@ -28,6 +28,7 @@ namespace OpenWT.Contact.Api.Controllers
 
         [HttpGet]
         [SwaggerResponse(200, "All contacts were retrieved", typeof(IEnumerable<ContactDto>))]
+        [SwaggerResponse(401, "Not authenticated")]
         [SwaggerOperation(Summary = "Retrieved all contacts", OperationId = "GetAllContact")]
         public virtual ActionResult<IEnumerable<ContactDto>> GetAll()
         {
@@ -36,6 +37,8 @@ namespace OpenWT.Contact.Api.Controllers
 
         [HttpGet("{id}")]
         [SwaggerResponse(200, "The contact was successfully retrieve", typeof(ContactDto))]
+        [SwaggerResponse(401, "Not authenticated")]
+        [SwaggerResponse(403, "Not authorized", typeof(ApiExceptionModel))]
         [SwaggerResponse(404, "The contact to retrieve was not found", typeof(ApiExceptionModel))]
         [SwaggerOperation(Summary = "Retrieve a contact", OperationId = "GetContact")]
         public ActionResult<ContactDto> Get([FromRoute] Guid id)
@@ -47,6 +50,7 @@ namespace OpenWT.Contact.Api.Controllers
         
         [HttpPost]
         [SwaggerResponse(201, "The contact was created", typeof(ContactDto))]
+        [SwaggerResponse(401, "Not authenticated")]
         [SwaggerResponse(400, "The contact data is invalid", typeof(ApiExceptionModel))]
         [SwaggerOperation(Summary = "Create a new contact", OperationId = "CreateContact")]
         public ActionResult<ContactDto> Create([FromBody, SwaggerRequestBody("The contact payload", Required = true)] ContactDto contactToCreate)
@@ -57,6 +61,8 @@ namespace OpenWT.Contact.Api.Controllers
 
         [HttpDelete("{id}")]
         [SwaggerResponse(200, "The contact was deleted")]
+        [SwaggerResponse(401, "Not authenticated")]
+        [SwaggerResponse(403, "Not authorized", typeof(ApiExceptionModel))]
         [SwaggerResponse(404, "The contact to delete was not found", typeof(ApiExceptionModel))]
         [SwaggerOperation(Summary = "Delete a contact", OperationId = "DeleteContact")]
         public IActionResult Delete([FromRoute] Guid id)
@@ -68,6 +74,8 @@ namespace OpenWT.Contact.Api.Controllers
 
         [HttpPut("{id}")]
         [SwaggerResponse(200, "The contact was successfully updated", typeof(ContactDto))]
+        [SwaggerResponse(401, "Not authenticated")]
+        [SwaggerResponse(403, "Not authorized", typeof(ApiExceptionModel))]
         [SwaggerResponse(404, "The contact to update was not found", typeof(ApiExceptionModel))]
         [SwaggerOperation(Summary = "Update a contact", OperationId = "UpdateContact")]
         public ActionResult<ContactDto> Update([FromRoute] Guid id, [FromBody, SwaggerRequestBody("The updated contact payload", Required = true)] ContactDto updateBody)

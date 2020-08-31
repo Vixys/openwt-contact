@@ -28,7 +28,9 @@ namespace OpenWT.Contact.Api.Controllers
         }
 
         [HttpGet]
-        [SwaggerResponse(200, "All skills of the contact were retrieved", typeof(IEnumerable<SkillDto>))]
+        [SwaggerResponse(200, "All skills of the contact were retrieved", typeof(IEnumerable<SkillDto>))]        
+        [SwaggerResponse(401, "Not authenticated")]
+        [SwaggerResponse(403, "Not authorized", typeof(ApiExceptionModel))]
         [SwaggerOperation(Summary = "Retrieved all contact's skills", OperationId = "GetAllContactSkill")]
         public virtual ActionResult<IEnumerable<SkillDto>> GetAll([FromRoute, SwaggerRequestBody("Contact id", Required = true)] Guid contactId)
         {
@@ -40,6 +42,8 @@ namespace OpenWT.Contact.Api.Controllers
         [HttpPost]
         [SwaggerResponse(200, "Skills were successfully added to contact")]
         [SwaggerResponse(400, "There is invalid data", typeof(ApiExceptionModel))]
+        [SwaggerResponse(401, "Not authenticated")]
+        [SwaggerResponse(403, "Not authorized", typeof(ApiExceptionModel))]
         [SwaggerOperation(Summary = "Add skill to contact", OperationId = "AddSkillContact")]
         public IActionResult Add([FromRoute, SwaggerRequestBody("Contact id", Required = true)] Guid contactId, [FromBody, SwaggerRequestBody("Skill ids to add to contact", Required = true)] IEnumerable<Guid> skillIds)
         {
@@ -48,8 +52,10 @@ namespace OpenWT.Contact.Api.Controllers
             return Ok();
         }
 
-        [HttpDelete()]
+        [HttpDelete]
         [SwaggerResponse(200, "The contact was deleted")]
+        [SwaggerResponse(401, "Not authenticated")]
+        [SwaggerResponse(403, "Not authorized", typeof(ApiExceptionModel))]
         [SwaggerResponse(404, "The contact to delete was not found", typeof(ApiExceptionModel))]
         [SwaggerOperation(Summary = "Delete a contact", OperationId = "DeleteContact")]
         public IActionResult Delete([FromRoute, SwaggerRequestBody("Contact id", Required = true)] Guid contactId, [FromBody, SwaggerRequestBody("Skill ids to add to contact", Required = true)] IEnumerable<Guid> skillIds)

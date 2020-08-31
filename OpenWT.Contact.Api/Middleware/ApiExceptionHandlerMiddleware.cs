@@ -58,6 +58,8 @@ namespace OpenWT.Contact.Api.Middleware
             {
                 case UnauthorizedException _:
                     return HttpStatusCode.Unauthorized;
+                case ForbiddenException _:
+                    return HttpStatusCode.Forbidden;
                 case BadParameterException _:
                     return HttpStatusCode.BadRequest;
                 case NotFoundException _:
